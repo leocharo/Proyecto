@@ -50,24 +50,23 @@
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Selecciona todos los toggles (iconos de ojo)
+       
         const toggles = document.querySelectorAll('.password-toggle');
 
         toggles.forEach(toggle => {
             toggle.addEventListener('click', function() {
-                // El campo de contraseña es el input inmediatamente anterior al icono.
+       
                 const passwordInput = toggle.previousElementSibling;
 
-                // 1. Cambiar el tipo de input (mostrar/ocultar)
+               
                 if (passwordInput.type === 'password') {
                     passwordInput.type = 'text';
                 } else {
                     passwordInput.type = 'password';
                 }
 
-                // 2. Cambiar el icono del ojo (para feedback visual)
-                // Usamos las clases que Bootstrap (FontAwesome) tiene para ojos abiertos/cerrados
-                toggle.classList.toggle('fa-eye'); // Asume fa-eye-slash es el icono inicial
+                
+                toggle.classList.toggle('fa-eye');
                 toggle.classList.toggle('fa-eye-slash'); 
             });
         });

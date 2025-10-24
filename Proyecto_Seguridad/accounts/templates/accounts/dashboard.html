@@ -108,17 +108,16 @@
             document.getElementById("main-content").style.marginLeft = "0";
         }
         document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona el campo de archivo oculto por su ID
+   
     const fileInput = document.getElementById('archivo-oculto');
 
-    // Agrega un escuchador de eventos al campo de archivo
+   
     fileInput.addEventListener('change', function() {
         if (fileInput.files.length > 0) {
             const fileName = fileInput.files[0].name;
             alert('Archivo seleccionado: ' + fileName);
             
-            // Aquí puedes agregar la lógica para subir el archivo a Django
-            // usando Fetch API o FormData
+           
         }
     });
 });
