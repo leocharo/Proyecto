@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-degradado">
+        <div class="signup-container">
+            <div class="signup-box">
+                <h2>Registrate</h2>
+                <p>Crear una cuenta o <a href="{% url 'login' %}">iniciar sesión</a></p>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="input-group">
+                        {{ form.email.label_tag }} 
+                        {{ form.email }}
+                    </div>
+
+                    <div class="input-group">
+                        {{ form.username.label_tag }} 
+                        {{ form.username }}
+                    </div>
+
+                    <div class="input-group">
+                        {{ form.password.label_tag }}
+                        <div class="password-wrapper">
+                            {{ form.password }}
+                            <i class="fa-regular fa-eye password-toggle"></i>
+                        </div>
+                    </div>
+                    
+                    {% if form.non_field_errors %}
+                        <div class="alert error-text">{{ form.non_field_errors }}</div>
+                    {% endif %}
+
+                    <button type="submit" class="signup-button">Crear Cuenta </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecciona todos los toggles (iconos de ojo)
+        const toggles = document.querySelectorAll('.password-toggle');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                // El campo de contraseña es el input inmediatamente anterior al icono.
+                const passwordInput = toggle.previousElementSibling;
+
+                // 1. Cambiar el tipo de input (mostrar/ocultar)
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+
+                // 2. Cambiar el icono del ojo (para feedback visual)
+                // Usamos las clases que Bootstrap (FontAwesome) tiene para ojos abiertos/cerrados
+                toggle.classList.toggle('fa-eye'); // Asume fa-eye-slash es el icono inicial
+                toggle.classList.toggle('fa-eye-slash'); 
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

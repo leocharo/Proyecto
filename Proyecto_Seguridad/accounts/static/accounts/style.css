@@ -1,0 +1,200 @@
+/* Reset básico para mejor consistencia */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Estilo del fondo degradado similar a la imagen (Mantenido) */
+
+.background-degradado {
+    background: linear-gradient(135deg, #8A2BE2, #4B0082, #FF8C00);
+    /* Morado/Violeta/Naranja */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Contenedor principal para centrar (Mantenido) */
+
+.signup-container {
+    width: 100%;
+    max-width: 450px;
+    /* Ancho máximo del formulario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo del recuadro del formulario (el "signup-box") (Mantenido) */
+
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Fondo blanco semitransparente */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+
+/* Títulos y texto (Mantenido) */
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.signup-box p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.signup-box a {
+    color: #8A2BE2;
+    /* Color morado para enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+
+/* Grupos de entrada (Mantenido) */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group input[type="email"],
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #8A2BE2;
+    outline: none;
+}
+
+
+/* Estilo específico para la entrada de contraseña con ícono (Mantenido) */
+
+.password-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+    /* Ajuste para el enlace de olvido de contraseña */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+
+
+/* Nuevo estilo para enlace de 'Olvidaste contraseña' */
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    /* Sobrescribe el font-weight: bold del 'a' general */
+    color: #666;
+}
+
+.forgot-password:hover {
+    color: #8A2BE2;
+}
+
+
+/* Botón principal (Estilo mantenido, renombrado en HTML para el login como 'Entrar') */
+
+.signup-button {
+    width: 100%;
+    background-color: #8A2BE2;
+    /* Morado fuerte */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+    /* Reducido para hacer espacio al segundo botón */
+}
+
+.signup-button:hover {
+    background-color: #6A1AAB;
+}
+
+
+/* Nuevo Botón secundario para ir al Registro */
+
+.register-button {
+    width: 100%;
+    background-color: transparent;
+    /* Transparente para ser un botón secundario */
+    color: #8A2BE2;
+    /* Texto morado */
+    padding: 15px;
+    border: 1px solid #8A2BE2;
+    /* Borde morado */
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 5px;
+}
+
+.register-button:hover {
+    background-color: #f0f0ff;
+    /* Fondo muy claro al pasar el ratón */
+    color: #6A1AAB;
+    border-color: #6A1AAB;
+}
+
+
+/* El estilo .terms-text no se usa en el login, pero se mantiene para el index.html */
+
+
+/* El estilo .checkbox-group no se usa en el login, pero se mantiene para el index.html */
