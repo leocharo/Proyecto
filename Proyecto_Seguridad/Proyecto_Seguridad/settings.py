@@ -111,5 +111,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'dashboard'
 
-# Necesario para que Django sepa a dónde mandar si un usuario no está logueado
 LOGIN_URL = 'login'
